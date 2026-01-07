@@ -24,13 +24,15 @@ class ReservationDetailView(RetrieveAPIView):
 
 # Home page view
 def home_page(request):
-    update_slot_statuses() 
-    available_slots = ParkingSlot.objects.filter(status=ParkingSlot.AVAILABLE)
-    reserved_slots = ParkingSlot.objects.filter(status=ParkingSlot.RESERVED)
-    occupied_slots = ParkingSlot.objects.filter(status=ParkingSlot.OCCUPIED)
+    try:
+        update_slot_statuses()
+    except Exception:
+        available_slots = ParkingSlot.objects.filter(status=ParkingSlot.AVAILABLE)
+        reserved_slots = ParkingSlot.objects.filter(status=ParkingSlot.RESERVED)
+        occupied_slots = ParkingSlot.objects.filter(status=ParkingSlot.OCCUPIED)
 
 
-    total_slots = ParkingSlot.objects.count()
+        total_slots = ParkingSlot.objects.count()
 
     return render(request, 'home.html', {
         'total_slots': total_slots,
