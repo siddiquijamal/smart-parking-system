@@ -1,0 +1,7 @@
+<h2>Payment Successful 🎉</h2>
+
+<p>Vehicle: {{ reservation.vehicle_number }}</p>
+<p>Slot: {{ reservation.slot.slot_number }}</p>
+<p>Amount Paid: ₹{{ reservation.amount }}</p>
+
+<a href="{% url 'reservationpage' %}">Book Another Slot</a>

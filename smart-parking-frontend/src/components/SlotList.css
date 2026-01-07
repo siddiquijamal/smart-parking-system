@@ -1,0 +1,81 @@
+.slot-container {
+  padding: 20px;
+}
+
+.slot-section {
+  margin-bottom: 35px;
+}
+
+.slot-section h3 {
+  margin-bottom: 15px;
+  font-size: 20px;
+  color: #333;
+}
+
+.slot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 15px;
+}
+
+.slot-card {
+  padding: 18px;
+  border-radius: 14px;
+  background: white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.slot-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+}
+
+.slot-card h4 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.badge {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 5px 12px;
+  font-size: 12px;
+  border-radius: 20px;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+/* Status colors */
+.slot-card.available {
+  border-left: 6px solid #2ecc71;
+}
+
+.slot-card.available .badge {
+  background: #eafaf1;
+  color: #2ecc71;
+}
+
+.slot-card.reserved {
+  border-left: 6px solid #f39c12;
+}
+
+.slot-card.reserved .badge {
+  background: #fff3e0;
+  color: #f39c12;
+}
+
+.slot-card.occupied {
+  border-left: 6px solid #e74c3c;
+}
+
+.slot-card.occupied .badge {
+  background: #fdecea;
+  color: #e74c3c;
+}
+
+.empty-text {
+  font-size: 14px;
+  color: #999;
+}

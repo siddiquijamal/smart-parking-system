@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment Page</title>
+</head>
+<body>
+
+<h2>Payment Page</h2>
+
+<p>Vehicle: {{ reservation.vehicle_number }}</p>
+<p>Slot: {{ reservation.slot.slot_number }}</p>
+<p>Hours: {{ reservation.start_time }} → {{ reservation.end_time }}</p>
+<p><strong>Amount: ₹{{ reservation.amount }}</strong></p>
+
+<form method="POST" action="{% url 'confirm_payment' reservation.id %}">
+    {% csrf_token %}
+    <button type="submit">Pay ₹{{ reservation.amount }}</button>
+</form>
+
+<hr>
+
+<button>Pay Now</button>
+
+</body>
+</html>

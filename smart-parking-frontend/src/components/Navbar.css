@@ -1,0 +1,87 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 40px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo */
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Menu */
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* Normal nav links */
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+/* Hover */
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ACTIVE LINK */
+.nav-link.active {
+  background: #fff;
+  color: #667eea;
+  font-weight: 600;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Register button */
+/* Register button (normal state) */
+.register {
+  color: #fff;
+  border: 2px solid #fff;
+  background: transparent;
+  text-decoration: none;
+  font-size: 15px;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.register:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ONLY when active */
+.register.active {
+  background: #fff;
+  color: #764ba2;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
+
+/* Logout */
+.logout {
+  background: #ff4d4f;
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+}

@@ -1,0 +1,12 @@
+a:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+div:hover {
+  transform: translateY(-4px);
+}

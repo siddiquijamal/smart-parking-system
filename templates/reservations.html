@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reserve Parking Slot</title>
+</head>
+<body>
+
+<h2>Reserve Parking Slot</h2>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <label>Vehicle Number</label><br>
+    <input type="text" name="vehicle_number" required><br><br>
+
+    <label>Select Slot</label><br>
+    <select name="slot" required>
+        <option value="" disabled selected>Select Slot</option>
+        {% for slot in available_slots %}
+            <option value="{{ slot.id }}">{{ slot.slot_number }}</option>
+        {% endfor %}
+    </select><br><br>
+
+    <label>Start Time</label><br>
+    <input type="datetime-local" name="start_time" required><br><br>
+
+    <label>End Time</label><br>
+    <input type="datetime-local" name="end_time" required><br><br>
+
+    <button type="submit">Confirm Reservation</button>
+</form>
+
+<div class="slot-status">
+    <div class="status"><div class="box green"></div> Available</div>
+    <div class="status"><div class="box orange"></div> Reserved</div>
+    <div class="status"><div class="box red"></div> Occupied</div>
+</div>
+
+
+
+{% if not available_slots %}
+<p style="color:red;">No slots available</p>
+{% endif %}
+
+{% if error %}
+<p style="color:red;">{{ error }}</p>
+{% endif %}
+
+
+</body>
+</html>
