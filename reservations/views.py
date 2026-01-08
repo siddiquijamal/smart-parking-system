@@ -22,17 +22,22 @@ class ReservationDetailView(RetrieveAPIView):
 
 
 
+from parking.models import ParkingSlot
+
 # Home page view
 def home_page(request):
+    # Always try to update slot statuses
     try:
         update_slot_statuses()
-    except Exception:
-        available_slots = ParkingSlot.objects.filter(status=ParkingSlot.AVAILABLE)
-        reserved_slots = ParkingSlot.objects.filter(status=ParkingSlot.RESERVED)
-        occupied_slots = ParkingSlot.objects.filter(status=ParkingSlot.OCCUPIED)
+    except Exception as e:
+        print("Slot update error:", e)
 
+    # ALWAYS define variables (no conditions)
+    available_slots = ParkingSlot.objects.filter(status=ParkingSlot.AVAILABLE)
+    reserved_slots = ParkingSlot.objects.filter(status=ParkingSlot.RESERVED)
+    occupied_slots = ParkingSlot.objects.filter(status=ParkingSlot.OCCUPIED)
 
-        total_slots = ParkingSlot.objects.count()
+    total_slots = ParkingSlot.objects.count()
 
     return render(request, 'home.html', {
         'total_slots': total_slots,
@@ -43,6 +48,7 @@ def home_page(request):
         'reserved_slots': reserved_slots,
         'occupied_slots': occupied_slots
     })
+
 
 from django.contrib.auth.decorators import login_required
 
