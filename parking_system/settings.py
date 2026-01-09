@@ -29,13 +29,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-m)d97=b^vg1yza_!b-n4&@1_zylh+*a9b4ae)^t$7n6ug9p65d'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
-    'your-backend-name.onrender.com',
+    'smart-parking-system-4-csgm.onrender.com',
     'localhost',
-    '127.0.0.1'
+    '127.0.0.1',
 ]
+
 
 
 # Application definition
